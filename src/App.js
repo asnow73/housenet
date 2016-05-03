@@ -1,10 +1,13 @@
 import React from 'react';
-import Login from './login/login';
+import Popup from './popup/popup';
 
 class App extends React.Component {
     render() {
         return (
-            <Login></Login>
+            <div>
+                <a href="#">Open popup</a>
+                <Popup></Popup>
+            </div>
         );
     }
 }
