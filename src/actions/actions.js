@@ -10,6 +10,7 @@ export function showLoginPopup() {
 }
 
 export function hideLoginPopup() {
+    console.log("hide");
     return {
         type: HIDE_LOGIN_POPUP
     }
@@ -17,7 +18,22 @@ export function hideLoginPopup() {
 
 export function getConfirmLogin(email, password) {
     return (dispatch) => {
-        dispatch({
+        return new Promise(function (resolve, reject) {
+            dispatch({
+                type: REQUEST_LOGIN,
+                email: email,
+                password: password
+            });
+            setTimeout(function () {
+                dispatch({
+                    type: RECEIVE_LOGIN,
+                    confirm: true
+                });
+                resolve();
+            }, 2000)
+        })
+
+        /*dispatch({
             type: REQUEST_LOGIN,
             email: email,
             password: password
@@ -27,6 +43,6 @@ export function getConfirmLogin(email, password) {
                 type: RECEIVE_LOGIN,
                 confirm: true
             })
-        }, 3000)
+        }, 3000)*/
     }
 }

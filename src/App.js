@@ -20,6 +20,7 @@ class App extends React.Component {
 // Обратите внимание: используйте https://github.com/faassen/reselect для более лучшей производительности.
 function select(state) {
     return {
+        state
         //loginPopupVisible: state.loginPopupVisible
     };
 }

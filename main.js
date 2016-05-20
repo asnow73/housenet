@@ -5,7 +5,7 @@ import App from './src/App';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import reducerApp from './src/reducers/reducers';
-import { getConfirmLogin } from './src/actions/actions';
+//import { getConfirmLogin } from './src/actions/actions';
 
 const createStoreWithMiddleware = applyMiddleware(
     thunkMiddleware // lets us dispatch() functions
@@ -15,12 +15,14 @@ const createStoreWithMiddleware = applyMiddleware(
 const store = createStoreWithMiddleware(reducerApp);
 
 //store.dispatch(selectReddit('reactjs'));
-store.dispatch(getConfirmLogin('al@al.com', '123456'));
-console.dir(store.getState())
-setTimeout(function(){
-    alert("aaaa");
-    console.dir(store.getState())
-}, 4000);
+
+//store.dispatch(getConfirmLogin('al@al.com', '123456'));
+//console.dir(store.getState())
+//setTimeout(function(){
+//    alert("aaaa");
+//    console.dir(store.getState())
+//}, 4000);
+
 //.then(() =>
 //    console.log(store.getState())
 //);
