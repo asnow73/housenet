@@ -10,7 +10,6 @@ export function showLoginPopup() {
 }
 
 export function hideLoginPopup() {
-    console.log("hide");
     return {
         type: HIDE_LOGIN_POPUP
     }
