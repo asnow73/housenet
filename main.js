@@ -7,7 +7,7 @@ import { Router, Route, browserHistory } from 'react-router'
 
 import App from './src/components/App';
 import reducerApp from './src/reducers/reducers';
-import Poster from './src/components/poster/poster'
+import Posts from './src/components/posts/posts'
 
 const createStoreWithMiddleware = applyMiddleware(
     thunkMiddleware // lets us dispatch() functions
@@ -23,7 +23,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={browserHistory}>
             <Route path="/" component={App}/>
-            <Route path="/poster" component={Poster}/>
+            <Route path="/posts" component={Posts}/>
         </Router>
     </Provider>,
     rootElement
