@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import thunkMiddleware from 'redux-thunk';
-import App from './src/components/App';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { Router, Route, browserHistory } from 'react-router'
+
+import App from './src/components/App';
 import reducerApp from './src/reducers/reducers';
+import Poster from './src/components/poster/poster'
 
 const createStoreWithMiddleware = applyMiddleware(
     thunkMiddleware // lets us dispatch() functions
@@ -18,9 +21,13 @@ ReactDOM.render(
     // Дочерний компонент должен быть обернуть в функцию
     // это баг в React 0.13.
     <Provider store={store}>
-        <div>
-            <App />
-        </div>
+        <Router history={browserHistory}>
+            <Route path="/" component={App}/>
+            <Route path="/poster" component={Poster}/>
+        </Router>
     </Provider>,
     rootElement
 );
+//<div>
+//    <App />
+//</div>
