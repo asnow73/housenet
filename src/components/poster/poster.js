@@ -2,13 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 //import { connect } from 'react-redux'
 import Date from '../date/date';
+require("./poster.scss");
 
 class Poster extends React.Component {
     render() {
         return (
-            <div>
-                <div className="author">Author: {this.props.data.author}</div>
-                <Date date={this.props.data.date}></Date>
+            <div className="poster">
+                <div className="info">
+                    <div className="author">Published by <b>{this.props.data.author}</b></div>
+                    <Date date={this.props.data.date}></Date>
+                </div>
                 <div className="content">Content: {this.props.data.content}</div>
             </div>
         )

@@ -1,0 +1,18 @@
+.poster {
+  display: flex;
+  flex-direction: column;
+  //flex-basis: 80%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  padding-bottom: 40px;
+  width: 70%;
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 5px;
+  }
+}

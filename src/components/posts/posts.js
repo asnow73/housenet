@@ -1,5 +1,6 @@
 import React from 'react';
 import Poster from '../poster/poster';
+require("./posts.scss");
 
 class Posts extends React.Component {
     render () {
@@ -23,7 +24,7 @@ class Posts extends React.Component {
         });
 
         return (
-            <div>
+            <div className="posts-list">
                 {tags}
             </div>
         )

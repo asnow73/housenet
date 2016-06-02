@@ -1,8 +1,7 @@
 .navbar {
   padding: 20px 0px;
   background: rgba(96,125,139,.9);
-  border: 1px solid red;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10,6 +9,7 @@
   height: 46px;
   margin-bottom: 1em;
   overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5);
 }
 
 .navbar a {
@@ -77,10 +77,10 @@
 }
 
 .navbar a:first-child {
-  border-radius: 5px 0 0 5px;
+  //border-radius: 5px 0 0 5px;
 }
 
 .navbar a:last-child {
-  border-radius: 0 5px 5px 0;
+  //border-radius: 0 5px 5px 0;
   border-right-width: 1px;
 }

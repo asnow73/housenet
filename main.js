@@ -21,9 +21,10 @@ ReactDOM.render(
     // Дочерний компонент должен быть обернуть в функцию
     // это баг в React 0.13.
     <Provider store={store}>
-        <Router history={browserHistory}>
-            <Route path="/" component={App}/>
-            <Route path="/posts" component={Posts}/>
+        <Router p history={browserHistory}>
+            <Route path="/" component={App}>
+                <Route path="/posts" component={Posts}/>
+            </Route>
         </Router>
     </Provider>,
     rootElement
