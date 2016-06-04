@@ -1,3 +1,12 @@
 button {
   width: 120px;
+  border: none;
+  background-color: #66addc;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #3498db;
+  }
 }
