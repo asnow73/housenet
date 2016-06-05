@@ -1,13 +1,14 @@
 import { combineReducers } from 'redux';
-import { SHOW_LOGIN_POPUP, HIDE_LOGIN_POPUP, REQUEST_LOGIN, RECEIVE_LOGIN } from '../actions/actionsLoginPopup';
+import { SHOW_LOGIN_POPUP, HIDE_LOGIN_POPUP, REQUEST_LOGIN, RECEIVE_LOGIN, LOGOUT } from '../actions/actionsLoginPopup';
 import { HIDE_NEW_POSTER_POPUP, SHOW_NEW_POSTER_POPUP, CREATE_POSTER } from '../actions/actionsNewPosterPopup';
 
-/*const initialState = {
+const authInitialState = {
     loginPopupVisible: false,
-    newPosterPopupVisible: false
-};*/
+    isFetching: false,
+    isAuth: false
+};
 
-function loginPopup(state = {loginPopupVisible: false}, action) {
+function loginPopup(state = authInitialState, action) {
     switch (action.type) {
         case SHOW_LOGIN_POPUP:
             return Object.assign({}, state, {
@@ -24,7 +25,11 @@ function loginPopup(state = {loginPopupVisible: false}, action) {
         case RECEIVE_LOGIN:
             return Object.assign({}, state, {
                 isFetching: false,
-                isConfirmed: true
+                isAuth: action.confirm
+            });
+        case LOGOUT:
+            return Object.assign({}, state, {
+                isAuth: false
             });
         default:
             return state;

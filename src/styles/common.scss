@@ -1,11 +1,11 @@
 .visible {
-  visibility: visible;
-  //display: flex;
+  //visibility: visible;
+  display: flex !important;
 }
 
 .hide {
-  visibility: hidden;
-  //display: none;
+  //visibility: hidden;
+  display: none !important;
 }
 
 textarea {

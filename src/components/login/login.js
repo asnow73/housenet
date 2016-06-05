@@ -38,7 +38,7 @@ class Login extends React.Component {
                     <button onClick={() => dispatch(hideLoginPopup())}>Close</button>
                     <button onClick={this.login.bind(this)} disabled={this.props.state.isFetching}>Login</button>
                 </div>
-                <Preloader visible={this.props.state.isFetching}></Preloader>
+                <Preloader visible={this.props.state.loginPopup.isFetching}></Preloader>
             </div>
         )
     }

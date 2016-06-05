@@ -2,6 +2,7 @@ export const SHOW_LOGIN_POPUP = 'SHOW_LOGIN_POPUP';
 export const HIDE_LOGIN_POPUP = 'HIDE_LOGIN_POPUP';
 export const REQUEST_LOGIN = 'REQUEST_LOGIN';
 export const RECEIVE_LOGIN = 'RECEIVE_LOGIN';
+export const LOGOUT = "LOGOUT";
 
 export function showLoginPopup() {
     return {
@@ -43,5 +44,11 @@ export function getConfirmLogin(email, password) {
                 confirm: true
             })
         }, 3000)*/
+    }
+}
+
+export function logout() {
+    return {
+        type: LOGOUT
     }
 }

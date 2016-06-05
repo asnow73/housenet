@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { showLoginPopup } from '../../actions/actionsLoginPopup';
+import classnames from 'classnames';
+import { showLoginPopup, logout } from '../../actions/actionsLoginPopup';
 import { showNewPosterPopup } from '../../actions/actionsNewPosterPopup';
 import Popup from '../popup/popup';
 require("./menu.scss");
@@ -9,11 +10,13 @@ class Menu extends React.Component {
     render() {
         // Получено благодаря вызову connect():
         const { dispatch } = this.props;
+
         return (
             <div>
                 <div className="navbar">
-                    <a href="#" onClick={() => dispatch(showLoginPopup())}>Sign In</a>
-                    <a href="#" onClick={() => dispatch(showNewPosterPopup())}>New Poster</a>
+                    <a className={classnames((!this.props.state.loginPopup.isAuth) ? 'visible' : 'hide')} href="#" onClick={() => dispatch(showLoginPopup())}>Sign In</a>
+                    <a className={classnames((this.props.state.loginPopup.isAuth) ? 'visible' : 'hide')} href="#" onClick={() => dispatch(logout())}>Sign Out</a>
+                    <a className={classnames((this.props.state.loginPopup.isAuth) ? 'visible' : 'hide')} href="#" onClick={() => dispatch(showNewPosterPopup())}>New Poster</a>
                 </div>
                 <Popup></Popup>
             </div>

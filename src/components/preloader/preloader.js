@@ -5,9 +5,8 @@ require("./preloader.scss");
 require("../../styles/common.scss");
 
 class Preloader extends React.Component {
-
     render() {
-        var preloaderVisible = this.props.state.isFetching ? 'visible' : 'hide';
+        var preloaderVisible = this.props.visible ? 'visible' : 'hide';
         return (
             <div className={classnames("preloader", preloaderVisible)}>
                 <div className="preloader-image"></div>

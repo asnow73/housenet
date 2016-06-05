@@ -21,8 +21,6 @@ class Popup extends React.Component {
         } else {
             return null;
         }
-
-
     }
 
     render() {
