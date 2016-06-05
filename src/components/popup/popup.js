@@ -1,19 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Login from '../login/login';
+import NewPoster from '../poster/newPoster';
 import classnames from 'classnames';
 require("./popup.scss");
 require("../../styles/common.scss");
 
 class Popup extends React.Component {
+    constructor() {
+        super();
+        this.getPopup = this.getPopup.bind(this);
+    }
+
+    getPopup() {
+        const { loginPopupVisible, newPosterPopupVisible } = this.props;
+        if (loginPopupVisible) {
+            return <Login />;
+        } else if (newPosterPopupVisible) {
+            return <NewPoster />;
+        } else {
+            return null;
+        }
+
+
+    }
+
     render() {
-        // Получено благодаря вызову connect():
-        const { loginPopupVisible } = this.props;
-        var visible = loginPopupVisible ? 'visible' : 'hide';
+        var content = this.getPopup();
+        var visible = (content != null) ? 'visible' : 'hide';
         return (
             <div className={classnames('popup', visible)}>
                 <div className="popup-content">
-                    <Login></Login>
+                    {content}
                 </div>
             </div>
         )
@@ -24,7 +42,8 @@ class Popup extends React.Component {
 // Обратите внимание: используйте https://github.com/faassen/reselect для более лучшей производительности.
 function select(state) {
     return {
-        loginPopupVisible: state.loginPopupVisible
+        loginPopupVisible: state.loginPopup.loginPopupVisible,
+        newPosterPopupVisible: state.newPosterPopup.newPosterPopupVisible
     };
 }
 

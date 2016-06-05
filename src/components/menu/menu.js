@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { showLoginPopup } from '../../actions/actions';
+import { showLoginPopup } from '../../actions/actionsLoginPopup';
+import { showNewPosterPopup } from '../../actions/actionsNewPosterPopup';
 import Popup from '../popup/popup';
 require("./menu.scss");
 
@@ -12,6 +13,7 @@ class Menu extends React.Component {
             <div>
                 <div className="navbar">
                     <a href="#" onClick={() => dispatch(showLoginPopup())}>Sign In</a>
+                    <a href="#" onClick={() => dispatch(showNewPosterPopup())}>New Poster</a>
                 </div>
                 <Popup></Popup>
             </div>

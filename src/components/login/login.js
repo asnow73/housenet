@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { hideLoginPopup, getConfirmLogin } from '../../actions/actions';
+import { hideLoginPopup, getConfirmLogin } from '../../actions/actionsLoginPopup';
 //import classnames from 'classnames';
 import Title from '../title/title'
 import Preloader from '../preloader/preloader'

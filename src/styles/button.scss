@@ -9,4 +9,8 @@ button {
   &:hover {
     background-color: #3498db;
   }
+
+  &:disabled {
+    background-color: #c6cfdb;
+  }
 }
