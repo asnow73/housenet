@@ -24,14 +24,22 @@ export function getConfirmLogin(email, password) {
                 email: email,
                 password: password
             });
-            setTimeout(function () {
+
+            fetch('http://localhost:8088/authenticate', {
+                method: 'post',
+                body: 'name=Alena&password=123456'
+            }).then((response) => {
+                console.log(response.headers.get('Content-Type')); // application/json; charset=utf-8
+                console.log(response.status); // 200
                 dispatch({
                     type: RECEIVE_LOGIN,
                     confirm: true
                 });
                 resolve();
-            }, 2000)
-        })
+            }, () => {
+                reject();
+            });
+        });
 
         /*dispatch({
             type: REQUEST_LOGIN,
